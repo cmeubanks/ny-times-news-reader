@@ -6,7 +6,9 @@ function Article({ story }) {
     <section>
       <h3>{story.title}</h3>
       <p>{story.author}</p>
-      <img src={story.url} alt='article image'/>
+      <div className="img-container">
+        <img src={story.image} alt='article image'/>
+      </div>
       <a href={story.url}>View Full Article</a>
       <p>{story.abstract}</p>
     </section>
