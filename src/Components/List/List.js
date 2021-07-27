@@ -8,10 +8,10 @@ function List( { stories }) {
   })
 
   return (
-    <section className="list-container">
+    <button className="article-btn">
       <h2>Fashion</h2>
       {articles}
-    </section>
+    </button>
   );
 }
 
