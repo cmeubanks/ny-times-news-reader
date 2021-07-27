@@ -4,6 +4,7 @@ import { cleanData } from '../../utilities.js';
 import Header from '../Header/Header.js';
 import List from '../List/List.js';
 import Article from '../Article/Article.js';
+import Genre from '../Genre/Genre.js';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
       <Header />
       {articles && <List stories={articles} handleClick={handleClick}/>}
       {chosenArticle && <Article story={chosenArticle}/>}
+      <Genre />
     </div>
   );
 }
