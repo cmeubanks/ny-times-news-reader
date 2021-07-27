@@ -5,9 +5,9 @@ import genres from '../../articleGenres.js';
 function Genre({ submitGenre }) {
   const [genre, setChosenGenre] = useState('')
 
-  const dropDown = genres.map((genre, index) => {
+  const dropDown = genres.map((genre) => {
       return(
-        <option key={index} value={genre}>{genre}</option>
+        <option value={genre}>{genre}</option>
       )
     })
 
@@ -16,12 +16,12 @@ function Genre({ submitGenre }) {
       <div className='filter-container'>
         <label className='label'>
           Choose your article genre:
-          <select className='select' value={genre} onChange={setChosenGenre}>
+          <select className='select' value={genre} onChange={(e) => setChosenGenre(e.target.value)}>
             {dropDown}
           </select>
         </label>
         </div>
-        <button className='drinkBtn' onClick={(e) => submitGenre(e)}>Get Drink</button>
+        <button className='genreBtn' onClick={(e) => submitGenre(e)}>Get Drink</button>
       </form>
   );
 }
