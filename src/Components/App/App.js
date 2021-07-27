@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getArticles } from '../../apiCalls.js';
+import List from '../List/List.js';
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
   const [articles, setArticles] = useState([])
 
   useEffect(() => {
-    getArticles()
+    getArticles('fashion')
     .then(data => {
       setArticles(data)
     })
@@ -16,7 +17,8 @@ function App() {
 
   return (
     <div className="App">
-      {console.log(articles)}
+    {console.log(articles)}
+    { articles && < List stories={articles}/>}
     </div>
   );
 }
