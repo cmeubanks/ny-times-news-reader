@@ -20,12 +20,19 @@ function App() {
     .catch(error => setError(error))
   }, []);
 
+  const handleClick = (id) => {
+    console.log(id)
+    const selectedStory = articles.find((article) => article.id === id)
+    setChosenArticle(selectedStory)
+  }
+
   return (
     <div className="App">
       { error && <p>{error}</p>}
       {!articles && <p>Loading...</p> }
       <Header />
-      {articles && <List stories={articles}/>}
+      {articles && <List stories={articles} handleClick={handleClick}/>}
+      {chosenArticle && <Article story={chosenArticle}/>}
     </div>
   );
 }

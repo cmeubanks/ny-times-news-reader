@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 
-function List( { stories }) {
+function List( { stories, handleClick }) {
   const articles = stories.map(story => {
     return (
-      <p key={story.id}>{story.title}</p>
+      <button key={story.id} onClick={() => handleClick(story.id)}>
+        {story.title}
+      </button>
     )
   })
 
   return (
-    <button className="article-btn">
+    <section className="article-sec">
       <h2>Fashion</h2>
       {articles}
-    </button>
+    </section>
   );
 }
 
