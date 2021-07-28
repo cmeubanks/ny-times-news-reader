@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function List( { stories, handleClick }) {
+function List( { genre, stories, handleClick }) {
   const articles = stories.map(story => {
     return (
       <button key={story.id} onClick={() => handleClick(story.id)}>
@@ -11,7 +11,7 @@ function List( { stories, handleClick }) {
 
   return (
     <section className="article-sec">
-      <h2>Fashion</h2>
+      <h2>{genre.toUpperCase()}</h2>
       {articles}
     </section>
   );
