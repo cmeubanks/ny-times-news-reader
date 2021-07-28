@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import genres from '../../articleGenres.js';
+import { Link } from 'react-router-dom';
 
 
 function Genre({ submitGenre }) {
   const [genre, setChosenGenre] = useState('')
 
-  const dropDown = genres.map((genre) => {
+  const dropDown = genres.map((genre, index) => {
       return(
-        <option value={genre}>{genre}</option>
+        <option key={index} value={genre}>{genre}</option>
       )
     })
 
-  const viewArticles = (e) => {
-    e.preventDefault();
+  const viewArticles = () => {
     submitGenre(genre);
   }
 
@@ -26,7 +26,11 @@ function Genre({ submitGenre }) {
           </select>
         </label>
         </div>
-        <button className='genreBtn' onClick={(e) => viewArticles(e)}>View Articles</button>
+        <Link to="/articles">
+          <button className='genreBtn' onClick={() => viewArticles}>
+          View Articles
+          </button>
+        </Link>
       </form>
   );
 }

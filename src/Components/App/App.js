@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getArticles } from '../../apiCalls.js';
 import { cleanData } from '../../utilities.js';
+import { Route, Switch, Redirect} from 'react-router-dom';
 import Header from '../Header/Header.js';
 import List from '../List/List.js';
 import Article from '../Article/Article.js';
@@ -32,12 +33,18 @@ function App() {
 
   return (
     <div className="App">
-      { error && <p>{error}</p>}
-      {!articles && <p>Loading...</p> }
       <Header />
-      {articles && <List genre={genre} stories={articles} handleClick={handleClick}/>}
-      {chosenArticle && <Article story={chosenArticle}/>}
-      <Genre submitGenre={submitGenre}/>
+      <Route path="/articles" render={() => {
+        return (
+          <div className='article-display'>
+            { error && <p>{error}</p>}
+            {!articles && <p>Loading...</p> }
+            {articles && <List genre={genre} stories={articles} handleClick={handleClick}/>}
+            {chosenArticle && <Article story={chosenArticle}/>}
+          </div>
+        )
+      }} />
+      <Route exact path="/" render={() => <Genre submitGenre={submitGenre}/>} />
     </div>
   );
 }
