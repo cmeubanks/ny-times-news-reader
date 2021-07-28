@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function List( { genre, stories, handleClick }) {
   const articles = stories.map(story => {
     return (
-      <button key={story.id} onClick={() => handleClick(story.id)}>
+      <button className="article-btn" key={story.id} onClick={() => handleClick(story.id)}>
         {story.title}
       </button>
     )
