@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import genres from '../../articleGenres.js';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 function Genre({ submitGenre }) {
+  let history = useHistory();
   const [genre, setChosenGenre] = useState('')
 
   const dropDown = genres.map((genre, index) => {
@@ -12,8 +13,10 @@ function Genre({ submitGenre }) {
       )
     })
 
-  const viewArticles = () => {
+  const viewArticles = (e) => {
+    e.preventDefault();
     submitGenre(genre);
+    history.push("/articles");
   }
 
   return (
@@ -26,11 +29,9 @@ function Genre({ submitGenre }) {
           </select>
         </label>
         </div>
-        <Link to="/articles">
-          <button className='genreBtn' onClick={() => viewArticles}>
+          <button className='genreBtn' onClick={(e) => viewArticles(e)}>
           View Articles
           </button>
-        </Link>
       </form>
   );
 }
