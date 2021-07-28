@@ -11,6 +11,11 @@ function Genre({ submitGenre }) {
       )
     })
 
+  const viewArticles = (e) => {
+    e.preventDefault();
+    submitGenre(genre);
+  }
+
   return (
     <form>
       <div className='filter-container'>
@@ -21,7 +26,7 @@ function Genre({ submitGenre }) {
           </select>
         </label>
         </div>
-        <button className='genreBtn' onClick={(e) => submitGenre(e)}>Get Drink</button>
+        <button className='genreBtn' onClick={(e) => viewArticles(e)}>View Articles</button>
       </form>
   );
 }

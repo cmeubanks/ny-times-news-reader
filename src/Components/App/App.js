@@ -27,6 +27,10 @@ function App() {
     setChosenArticle(selectedStory)
   }
 
+  const submitGenre = (section) => {
+   setGenre(section)
+  }
+
   return (
     <div className="App">
       { error && <p>{error}</p>}
@@ -34,7 +38,7 @@ function App() {
       <Header />
       {articles && <List stories={articles} handleClick={handleClick}/>}
       {chosenArticle && <Article story={chosenArticle}/>}
-      <Genre />
+      <Genre submitGenre={submitGenre}/>
     </div>
   );
 }
