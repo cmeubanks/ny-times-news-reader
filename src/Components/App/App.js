@@ -41,6 +41,7 @@ function App() {
             {!articles && <p>Loading...</p> }
             {articles && <List genre={genre} stories={articles} handleClick={handleClick}/>}
             {chosenArticle && <Article story={chosenArticle}/>}
+            {!chosenArticle && <Article story={chosenArticle}/>}
           </div>
         )
       }} />

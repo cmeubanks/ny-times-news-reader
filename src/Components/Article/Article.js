@@ -7,9 +7,10 @@ function Article({ story }) {
       <h3>{story.title}</h3>
       <p>{story.author}</p>
       <div className="img-container">
-        <img src={story.image} alt='article image'/>
+        {story && <img src={story.image} alt='article image'/>}
+        {!story && <img src={process.env.PUBLIC_URL +"/nyt.jpeg"} alt='article image'/>}
       </div>
-      <a href={story.url}>View Full Article</a>
+      {story && <a href={story.url}>View Full Article</a>}
       <p>{story.abstract}</p>
     </section>
   );
