@@ -17,6 +17,7 @@ function Genre({ submitGenre }) {
     e.preventDefault();
     submitGenre(genre);
     history.push("/articles");
+    //need to do this without manu=ipulating history "code smell"
   }
 
   return (
