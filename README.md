@@ -61,3 +61,4 @@ When designing this application, I was seeking simplicity and a way to desplay a
 
 ## Demos
 
+![Screen Shot 2021-07-29 at 10 34 29 PM](https://user-images.githubusercontent.com/73092355/127600849-6c4ef30a-20bf-45aa-9499-2e5f6dfd0c68.png)
