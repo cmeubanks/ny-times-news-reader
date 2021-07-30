@@ -8,7 +8,7 @@ function Article({ story }) {
       <p>{story.author}</p>
       <div className="img-container">
         {story && <img className='art-img' src={story.image} alt='article image'/>}
-        {!story && <img className='newspaper' src={process.env.PUBLIC_URL +"/nyt.jpeg"} alt='article image'/>}
+        {!story && <img className='newspaper' height="900" width="900" src={process.env.PUBLIC_URL +"/nyt.jpeg"} alt='article image'/>}
       </div>
       <div className="description">
         {story && <a href={story.url}>View Full Article</a>}
