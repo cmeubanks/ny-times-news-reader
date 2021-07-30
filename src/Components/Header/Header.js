@@ -7,7 +7,7 @@ function Header() {
     <header>
       <h1>News Reader</h1>
       <NavLink exact to='/' className='nav-btn'>
-        Article Type
+        Home
       </NavLink>
     </header>
   );
