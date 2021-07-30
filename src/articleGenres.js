@@ -1,7 +1,7 @@
 const genres = [
+  "",
   "arts",
   "books",
-  "business",
   "fashion",
   "science",
   "sports",
