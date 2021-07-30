@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import genres from '../../articleGenres.js';
 import { useHistory } from 'react-router-dom';
 
@@ -16,8 +17,6 @@ function Genre({ submitGenre }) {
   const viewArticles = (e) => {
     e.preventDefault();
     submitGenre(genre);
-    history.push("/articles");
-    //need to do this without manu=ipulating history "code smell"
   }
 
   return (
@@ -31,8 +30,11 @@ function Genre({ submitGenre }) {
         </label>
         </div>
           <button className='genreBtn' onClick={(e) => viewArticles(e)}>
-          View Articles
+          Submit
           </button>
+          <Link exact to='/articles' className='article-link'>
+          View Articles
+          </Link>
       </form>
   );
 }
