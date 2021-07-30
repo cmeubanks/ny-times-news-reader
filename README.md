@@ -1,4 +1,4 @@
-# New York Times News Reader
+# New York Times - News Reader
 
 ## Description
 
